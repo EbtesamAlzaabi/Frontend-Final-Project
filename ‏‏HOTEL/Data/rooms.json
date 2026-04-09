@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Cozy Single Room",
+    "type": "Single",
+    "price": 120,
+    "image": "images/room1.jpg",
+    "description": "A cozy room perfect for solo travelers."
+  },
+  {
+    "name": "Spacious Double Room",
+    "type": "Double",
+    "price": 180,
+    "image": "images/room2.jpg",
+    "description": "Comfortable room for two with modern amenities."
+  },
+  {
+    "name": "Luxury Suite",
+    "type": "Suite",
+    "price": 300,
+    "image": "images/room3.jpg",
+    "description": "Elegant suite with living space and luxury facilities."
+  }
+]
