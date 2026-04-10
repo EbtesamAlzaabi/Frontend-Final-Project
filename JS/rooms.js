@@ -15,7 +15,7 @@ function renderRooms(data){
   if(data.length === 0){
     roomsContainer.innerHTML = `
       <div class="text-center mt-5">
-        <h4>😢 No rooms found</h4>
+        <h4> No rooms found</h4>
       </div>
     `;
     return;
@@ -121,4 +121,6 @@ themeToggle.addEventListener("click",()=>{
     themeToggle.classList.replace("bi-sun-fill","bi-moon-fill");
     localStorage.removeItem("theme");
   }
-});
+}
+
+);
