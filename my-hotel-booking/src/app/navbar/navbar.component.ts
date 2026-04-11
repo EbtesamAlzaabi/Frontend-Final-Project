@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-navbar',
@@ -20,28 +21,22 @@ import { RouterModule } from '@angular/router';
       </a>
 
       <button class="btn btn-light" (click)="toggleTheme()">
-        🌙
+        {{ themeService.isDark() ? '☀️' : '🌙' }}
       </button>
     </div>
 
   </nav>
   `
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+
+  constructor(public themeService: ThemeService) {}
 
   toggleTheme() {
-    document.body.classList.toggle('dark');
-
-    if (document.body.classList.contains('dark')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.removeItem('theme');
-    }
+    this.themeService.toggleTheme();
   }
 
   ngOnInit() {
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-    }
+    this.themeService.loadTheme();
   }
 }
