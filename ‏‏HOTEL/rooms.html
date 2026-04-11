@@ -8,7 +8,7 @@
 
   <!-- Link css-bootstrap -->
   <link rel="stylesheet" href="./CSS/bootstrap.min.css">
-    <!-- Link icons bootstrap -->
+  <!-- Link icons bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <!-- Link css -->
   <link rel="stylesheet" href="./CSS/style.css">
@@ -17,54 +17,55 @@
 
 <body>
 
-<!---------------------------------------- Navbar ---------------------------------------->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Hotel</a>
+  <!---------------------------------------- Navbar ---------------------------------------->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Stay Ease</a>
 
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">Rooms</a></li>
-        <li class="nav-item d-flex align-items-center">
-          <i class="bi bi-moon-fill theme-toggle" id="themeToggle"></i>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Rooms</a></li>
+          <li class="nav-item d-flex align-items-center">
+            <i class="bi bi-moon-fill theme-toggle" id="themeToggle"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!---------------------------------------- Filters ---------------------------------------->
+  <div class="container d-flex justify-content-center">
+    <div class="filter-bar">
+
+      <div class="filter-content">
+
+        <input type="text" id="searchInput" placeholder="Search by room name">
+
+        <select id="typeFilter">
+          <option value="">All Types</option>
+          <option value="Single">Single</option>
+          <option value="Double">Double</option>
+          <option value="Suite">Suite</option>
+        </select>
+
+        <div class="price-box">
+          <label>Max Price: <span id="priceValue">1000</span>$</label>
+          <input type="range" min="50" max="1000" id="priceFilter" value="1000">
+        </div>
+
+      </div>
+
     </div>
   </div>
-</nav>
-
-<!---------------------------------------- Filters ---------------------------------------->
-<div class="container filter-bar">
-  <div class="row g-2">
-    <div class="col-md-4">
-      <input type="text" id="searchInput" class="form-control" placeholder="Search by room name">
-    </div>
-
-    <div class="col-md-4">
-      <select id="typeFilter" class="form-select">
-        <option value="">All Types</option>
-        <option value="Single">Single</option>
-        <option value="Double">Double</option>
-        <option value="Suite">Suite</option>
-      </select>
-    </div>
-
-    <div class="col-md-4">
-      <label>Max Price: <span id="priceValue">1000</span>$</label>
-      <input type="range" class="form-range" min="50" max="1000" id="priceFilter" value="1000">
-    </div>
+  <!---------------------------------------- Rooms ---------------------------------------->
+  <div class="container my-4">
+    <div class="row" id="roomsContainer"></div>
   </div>
-</div>
-
-<!---------------------------------------- Rooms ---------------------------------------->
-<div class="container my-4">
-  <div class="row" id="roomsContainer"></div>
-</div>
 
 
   <!-- Link js-bootstrap -->
@@ -74,4 +75,5 @@
 
 
 </body>
+
 </html>

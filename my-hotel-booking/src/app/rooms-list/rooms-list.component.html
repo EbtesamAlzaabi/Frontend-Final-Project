@@ -1,0 +1,17 @@
+<div class="container">
+
+  <div class="form-check mb-4">
+    <input type="checkbox" class="form-check-input" [(ngModel)]="showAvailableOnly" (change)="toggleAvailable()">
+    <label class="form-check-label">Show only available</label>
+  </div>
+
+  <div class="row g-4">
+
+    <div class="col-lg-4 col-md-6 fade-up" *ngFor="let room of rooms"> <app-room-card [room]="room"
+        (select)="onSelectRoom($event)">
+      </app-room-card>
+    </div>
+
+  </div>
+
+</div>

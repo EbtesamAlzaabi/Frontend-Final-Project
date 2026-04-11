@@ -1,0 +1,29 @@
+<div class="card h-100 shadow-sm p-3">
+
+  <h5 class="fw-bold">{{room.name}}</h5>
+
+  <!-- Type -->
+  <div [ngSwitch]="room.type" class="mb-2">
+    <span *ngSwitchCase="'Single'" class="badge bg-primary">Single</span>
+    <span *ngSwitchCase="'Double'" class="badge bg-success">Double</span>
+    <span *ngSwitchCase="'Suite'" class="badge bg-warning text-dark">Suite</span>
+  </div>
+
+  <p class="text-muted">$ {{room.price}}</p>
+
+  <!-- Rating -->
+  <p>⭐ {{room.rating}}</p>
+
+  <!-- Availability -->
+  <div *ngIf="!room.available" class="alert alert-danger py-1 text-center">
+    Not Available
+  </div>
+
+  <!-- Button -->
+  <button class="btn btn-primary mt-auto"
+    [disabled]="!room.available"
+    (click)="selectRoom()">
+    Book Now
+  </button>
+
+</div>

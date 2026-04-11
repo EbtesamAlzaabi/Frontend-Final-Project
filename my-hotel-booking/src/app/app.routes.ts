@@ -1,0 +1,9 @@
+import { Routes } from '@angular/router';
+import { RoomsListComponent } from './rooms-list/rooms-list.component';
+import { BookingFormComponent } from './booking-form/booking-form.component';
+
+export const routes: Routes = [
+  { path: 'rooms', component: RoomsListComponent },
+  { path: 'booking', component: BookingFormComponent },
+  { path: '', redirectTo: 'rooms', pathMatch: 'full' }
+];
